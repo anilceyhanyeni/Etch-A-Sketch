@@ -2,14 +2,15 @@ body = document.body
 const container = document.querySelector("#container");
 const etch = document.querySelector("#etch");
 const rows = document.getElementsByClassName("gridRows");
-const cell = document.getElementsByClassName("cell")
+const cells = document.getElementsByClassName("cell")
 
 let rowNum = 16;                                                //default values
 let columnCount = 16;
+
 makeRows(rowNum);
 makeCells(columnCount);
 
-function cellCount() {                                          //changes cell count with user input
+function cellCount() {                                                                                      //changes cell count with user input
     Array.from(document.querySelectorAll('.cell')).forEach((el) => el.classList.remove('cell'));
     rowNum = prompt('Enter cell count:');
     columnCount= rowNum;
@@ -18,8 +19,7 @@ function cellCount() {                                          //changes cell c
     return rowNum, columnCount;
     }
 
-function makeRows(rowNum) {                             //creates rows
-        
+function makeRows(rowNum) {                             //creates rows   
     for (r = 0; r < rowNum; r++) {
         let row = document.createElement("div");
         //row.textContent = "test"
@@ -27,7 +27,7 @@ function makeRows(rowNum) {                             //creates rows
     };
 };
 
-function makeCells(columnCount) {                           //creates cells 
+function makeCells(columnCount) {                        //takes column number from row number since it's a square   //creates cells 
     for ( j=0; columnCount>j; j++) {
         for ( k=0; k<columnCount; k++) {
         let cell = document.createElement('div');
