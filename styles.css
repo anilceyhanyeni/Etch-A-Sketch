@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+
+button {
+    margin: 10px;
+    padding: 16px;
+}
+
+#container {
+    display:flex;
+    align-items: center;
+    flex-flow: column;
+    background-color: pink;
+    border: 2px black;
+    margin:100px;
+}
+
+.gridRows {
+    display: flex;
+    background-color: white;
+}
+
+.cell {
+    display: flex;
+    border: 1px solid black;
+    padding:16px;
+}
