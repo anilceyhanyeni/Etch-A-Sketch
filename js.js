@@ -3,13 +3,19 @@ const container = document.querySelector("#container");
 const rows = document.getElementsByClassName("gridRows");
 const cell = document.getElementsByClassName("cell")
 
+let rowNum = 16;            //default values
+let columnCount = 16;
+makeRows(rowNum);
+makeCells(columnCount);
 
 function cellCount() {
+    Array.from(document.querySelectorAll('.cell')).forEach((el) => el.classList.remove('cell'));
     let rowNum = prompt('Enter row number:');
     let columnCount= rowNum;
     makeRows(rowNum);
     makeCells(columnCount);
-}
+    return rowNum, columnCount;
+    }
 
 function makeRows(rowNum) { 
         

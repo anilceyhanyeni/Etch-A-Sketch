@@ -16,7 +16,6 @@ button {
     flex-flow: column;
     background-color: pink;
     border: 2px black;
-    margin:100px;
 }
 
 .gridRows {
