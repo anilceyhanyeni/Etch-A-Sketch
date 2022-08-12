@@ -15,8 +15,16 @@ button {
     align-items: center;
     flex-flow: column;
     background-color: pink;
-    border: 2px black;
 }
+
+#etch {
+    display:flex;
+    flex: 1 1;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
 
 .gridRows {
     display: flex;

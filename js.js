@@ -1,32 +1,33 @@
 body = document.body
 const container = document.querySelector("#container");
+const etch = document.querySelector("#etch");
 const rows = document.getElementsByClassName("gridRows");
 const cell = document.getElementsByClassName("cell")
 
-let rowNum = 16;            //default values
+let rowNum = 16;                                                //default values
 let columnCount = 16;
 makeRows(rowNum);
 makeCells(columnCount);
 
-function cellCount() {
+function cellCount() {                                          //changes cell count with user input
     Array.from(document.querySelectorAll('.cell')).forEach((el) => el.classList.remove('cell'));
-    let rowNum = prompt('Enter row number:');
-    let columnCount= rowNum;
+    rowNum = prompt('Enter cell count:');
+    columnCount= rowNum;
     makeRows(rowNum);
     makeCells(columnCount);
     return rowNum, columnCount;
     }
 
-function makeRows(rowNum) { 
+function makeRows(rowNum) {                             //creates rows
         
     for (r = 0; r < rowNum; r++) {
         let row = document.createElement("div");
         //row.textContent = "test"
-        container.appendChild(row).className = "gridRows";
+        etch.appendChild(row).className = "gridRows";
     };
 };
 
-function makeCells(columnCount) {
+function makeCells(columnCount) {                           //creates cells 
     for ( j=0; columnCount>j; j++) {
         for ( k=0; k<columnCount; k++) {
         let cell = document.createElement('div');
@@ -37,18 +38,18 @@ function makeCells(columnCount) {
     };  
 
   
-    function changeColor (target) {
-        target.style.backgroundColor = 'black';
+    function changeColor (target) {                       //changes squares to black
+        target.style.backgroundColor = 'black';        
     }
     
-container.addEventListener("mouseover", e => {
-    target = e.target;
+etch.addEventListener("mouseover", e => {              //mouseover function                            
+    target = e.target;       
     if (e.target.matches("div.cell")) {
          changeColor(target);
     }
 });
     
-function reset() {
+function reset() {                                                                                                  //resets grid to default
     Array.from(document.querySelectorAll('.cell')).forEach((el) => el.classList.remove('cell'));
     makeRows(rowNum);
     makeCells(columnCount);
